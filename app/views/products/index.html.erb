@@ -7,7 +7,7 @@
     <th>Description</th>
     <th>Image Url</th>
   </tr>
-  <% for product in @products %>
+  <% @products.each do |product| %>
     <tr>
       <td><%= product.title %></td>
       <td><%= product.price %></td>
