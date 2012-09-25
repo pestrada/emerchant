@@ -12,7 +12,7 @@ class OrderItemsController < ApplicationController
     if @order_item.save
       redirect_to @order, :notice => "Successfully created order item."
     else
-      render :action => 'new'
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class OrderItemsController < ApplicationController
     elsif @order_item.update_attributes(params[:order_item])
       redirect_to @order_item.order, :notice => "Successfully updated order item."
     else
-      render :action => 'edit'
+      render :edit
     end
   end
 
