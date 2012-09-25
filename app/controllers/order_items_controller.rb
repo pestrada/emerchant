@@ -1,6 +1,10 @@
 class OrderItemsController < ApplicationController
   
   before_filter :load_order
+  
+  def index
+    @order_items = OrderItem.all
+  end
 
   def create
     @order_item = @order.order_items.new(:quantity => 1, :product_id => params[:product_id])
@@ -27,6 +31,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item = OrderItem.find(params[:id])
     @order_item.destroy
-    redirect_to order_items_url, :notice => "Successfully destroyed order item."
+    
+    redirect_to @order_item.order, :notice => "Successfully destroyed order item."
   end
 end

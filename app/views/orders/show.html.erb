@@ -27,10 +27,12 @@
         <td><%= item.quantity %></td>
         <td><%= print_price(item.product.price) %></td>
         <td><%= print_price(item.subtotal) %></td>
+        <td><%= link_to "Remove", item, :confirm => "Really delete?", :method => :delete %></td>
       </tr>
     <% end %>
     <th>Total</th>
     <td><%= print_price(@order.total) %></td>
+    <td><%= link_to "Empty Cart", @order, :confirm => "Really Empty Cart?", :method => :delete %></td>
   </table>
 
 <p>
