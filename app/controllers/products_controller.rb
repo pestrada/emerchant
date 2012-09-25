@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  
+  before_filter :load_order
+  
   def index
     @products = Product.all
   end

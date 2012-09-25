@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Buy</th>
     <th>Image URL</th>
     <th>Description</th>
     <th>Price</th>
@@ -13,6 +14,7 @@
       <td><span class="product_title"><%= product.title %></span><%= product.description %></td>
       <td><%= print_price(product.price) %></td>
       <td><%= print_stock(product.stock) %></td>
+      <td><%= button_to "Add to cart", order_items_path(:product_id => product.id) %></td>
       <td><%= link_to "Show", product_path(product) %></td>
       <td><%= link_to 'Edit', edit_product_path(product) %></td>
       <td><%= link_to 'Destroy', product_path(product), :confirm => 'Are you sure?', :method => :delete %></td>
